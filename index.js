@@ -81,8 +81,10 @@ function init() {
     promptUser().then(data => {
         return generateMarkdown(data)
     }).then(pageMarkdown => {
-        writeToFile("README.md", pageMarkdown)
-    })
+        return writeToFile("README.md", pageMarkdown)
+    }).catch(err => {
+        console.log(err)
+    }) 
 }
 
 // Function call to initialize app
