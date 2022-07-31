@@ -1,6 +1,7 @@
 const inquirer = require("inquirer")
 const generateMarkdown = require("./utils/generateMarkdown.js")
 const fs = require("fs")
+const { generate } = require("rxjs")
 // TODO: Include packages needed for this application
 
 // TODO: Create an array of questions for user input
@@ -23,7 +24,7 @@ const promptUser = () => {
             type: "input",
             name: "title",
             message: questions[2]
-        }
+        },
 		{
 			type: "input",
 			name: "description",
@@ -77,7 +78,11 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    writeToFile("README.md", "Hello")
+    promptUser().then(data => {
+        return generateMarkdown(data)
+    }).then(pageMarkdown => {
+        writeToFile("README.md", pageMarkdown)
+    })
 }
 
 // Function call to initialize app
