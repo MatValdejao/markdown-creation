@@ -10,53 +10,93 @@ const questions = ["What is your GitHub username? "]
 
 const promptUser = () => {
     return inquirer.prompt([
-		{
-			type: "input",
-			name: "github",
-			message: questions[0],
-		},
-		{
-			type: "input",
-			name: "email",
-			message: questions[1],
-        },
-        {
-            type: "input",
-            name: "title",
-            message: questions[2]
-        },
-		{
-			type: "input",
-			name: "description",
-			message: questions[3],
-		},
-		{
-			type: "checkbox",
-			name: "license",
-			message: questions[4],
-			choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
-		},
-		{
-			type: "input",
-			name: "dependencies",
-			message: questions[5],
-		},
-		{
-			type: "input",
-			name: "command",
-			message: questions[6],
-        },
-        {
-            type: "input",
-            name: "know",
-            message: questions[7],
-        },
-        {
-            type: "input",
-            name: "contribution",
-            message: questions[8],
-        }
-	]);
+			{
+				type: "input",
+				name: "github",
+				message: questions[0],
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter your GitHub username!");
+						return false;
+					}
+				},
+			},
+			{
+				type: "input",
+				name: "email",
+				message: questions[1],
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter your email!");
+						return false;
+					}
+				},
+			},
+			{
+				type: "input",
+				name: "title",
+				message: questions[2],
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter a project title!");
+						return false;
+					}
+				},
+			},
+			{
+				type: "input",
+				name: "description",
+				message: questions[3],
+			},
+			{
+				type: "checkbox",
+				name: "license",
+				message: questions[4],
+				choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+			},
+			{
+				type: "input",
+				name: "dependencies",
+				message: questions[5],
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter project dependencies!");
+						return false;
+					}
+				},
+			},
+			{
+				type: "input",
+				name: "command",
+				message: questions[6],
+				validate: (input) => {
+					if (input) {
+						return true;
+					} else {
+						console.log("Please enter test commands!");
+						return false;
+					}
+				},
+			},
+			{
+				type: "input",
+				name: "know",
+				message: questions[7],
+			},
+			{
+				type: "input",
+				name: "contribution",
+                message: questions[8],
+			},
+		]);
 }
 
 // TODO: Create a function to write README file
