@@ -35,14 +35,12 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ![License](${renderLicenseBadge(data.license)})(${renderLicenseLink(data.license)})
+  [![License](${renderLicenseBadge(data.license)})](${renderLicenseLink(
+		data.license
+	)})
   ## Description
   ${data.description}
   ## Table of Contents
@@ -58,7 +56,24 @@ function generateMarkdown(data) {
 
     ${data.dependencies}
 
-  
+  ## Usage
+  ${data.know}
+
+  ## License
+  This project os licensed under the ${
+		data.license
+	} license: [![License](${renderLicenseBadge(
+		data.license
+	)})](${renderLicenseLink(data.license)})
+
+  ## Contributing
+  ${data.contribution}
+
+  ## Tests
+  ${data.command}
+
+  ## Questions
+  If you have any questions about the repo, open an issue or contact me directly. My email is: [matvaldejao123@gmail.com](mailto:matvaldejao123@gmail.com)
 `;
 }
 
