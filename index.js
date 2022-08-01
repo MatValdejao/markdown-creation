@@ -53,7 +53,7 @@ const promptUser = () => {
 				message: questions[3],
 			},
 			{
-				type: "checkbox",
+				type: "list",
 				name: "license",
 				message: questions[4],
 				choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
