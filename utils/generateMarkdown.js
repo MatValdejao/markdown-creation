@@ -35,6 +35,14 @@ function renderLicenseLink(license) {
   }
 }
 
+function checkDemo(demo) {
+  if (demo) {
+    return `Link to demo video: ${demo}`
+  } else {
+    return ""
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
@@ -43,6 +51,8 @@ function generateMarkdown(data) {
 	)})
   ## Description
   ${data.description}
+  ${checkDemo(data.demo)}
+
   ## Table of Contents
    * [Installation](#installation)
    * [Usage](#usage)
@@ -70,10 +80,10 @@ function generateMarkdown(data) {
   ${data.contribution}
 
   ## Tests
-  ${data.command}
+    ${data.command}
 
   ## Questions
-  If you have any questions about the repo, open an issue or contact me directly. My email is: [matvaldejao123@gmail.com](mailto:matvaldejao123@gmail.com)
+  If you have any questions about the repo, contact me at [${data.github}](https://github.com/${data.github}) or by email: [${data.email}](mailto:${data.email})
 `;
 }
 
