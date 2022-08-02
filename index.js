@@ -4,7 +4,17 @@ const fs = require("fs")
 // TODO: Include packages needed for this application
 
 // TODO: Create an array of questions for user input
-const questions = ["What is your GitHub username? ", "What is your email address? ", "What is your project's name? ", "Please write a short description of your project ", "What kind of license shoukd your project have? ", "What command should be run to install dependencies? ", "What command should be run to run tests? ", "What does the user need to know about using the repo? ", "What does the user need to know about contributing to the repo? "];
+const questions = [
+	"What is your GitHub username? (make it sure exactly matches)",
+	"What is your email address? ",
+	"What is your project's name? ",
+	"Please write a short description of your project ",
+	"What kind of license shoukd your project have? ",
+	"What command should be run to install dependencies? ",
+	"What command should be run to run tests? ",
+	"What does the user need to know about using the repo? ",
+	"What does the user need to know about contributing to the repo? ",
+];
 
 const promptUser = () => {
 	return inquirer.prompt([
@@ -16,7 +26,7 @@ const promptUser = () => {
 				if (input) {
 					return true;
 				} else {
-					console.log("Please enter your GitHub username! (make it sure exactly matches)");
+					console.log("Please enter your GitHub username!");
 					return false;
 				}
 			},
