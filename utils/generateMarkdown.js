@@ -16,22 +16,30 @@ const licenseLinks = [
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  for (var i = 0; i < licenseLinks.length; i++) {
-    if (license === licenseOptions[i]) {
-      badge = licenseBadge[i]
-      return badge;
-    }
+  if (license === "None") {
+    return ""
+  } else {
+    return `https://img.shields.io/badge/License-${license}-yellow.svg`
   }
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  for (var i = 0; i < licenseLinks.length; i++) {
-    if (license === licenseOptions[i]) {
-      link = licenseLinks[i]
-      return link;
-    }
+  if (license === "None") {
+		return "";
+	} else {
+		return `* [License](#license)`;
+	}
+}
+
+function renderLicenseSection(license) {
+  if (license === "None") {
+    return ""
+  } else {
+    return `## License
+  This project os licensed under the ${license} license.
+    `
   }
 }
 
@@ -46,9 +54,7 @@ function checkDemo(demo) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  [![License](${renderLicenseBadge(data.license)})](${renderLicenseLink(
-		data.license
-	)})
+  ![License](${renderLicenseBadge(data.license)})
   ## Description
   ${data.description}
   ${checkDemo(data.demo)}
@@ -56,7 +62,7 @@ function generateMarkdown(data) {
   ## Table of Contents
    * [Installation](#installation)
    * [Usage](#usage)
-   * [License](#license)
+   ${renderLicenseLink(data.license)}
    * [Contributing](#contributing)
    * [Tests](#tests)
    * [Questions](#questions)
@@ -69,12 +75,7 @@ function generateMarkdown(data) {
   ## Usage
   ${data.know}
 
-  ## License
-  This project os licensed under the ${
-		data.license
-	} license: [![License](${renderLicenseBadge(
-		data.license
-	)})](${renderLicenseLink(data.license)})
+  ${renderLicenseSection(data.license)}
 
   ## Contributing
   ${data.contribution}
