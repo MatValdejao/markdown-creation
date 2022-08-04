@@ -1,8 +1,9 @@
-# g
+# Markdown Creation
   ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
   ## Description
-  g
-  
+  This project uses Node to prompt the user a series of questions regarding their current coding project. Using the user inputs, the code writes the user a README file based on these inputs, streamlining the coding process.
+
+  Link to demo video: https://drive.google.com/file/d/1AVE4nNzGRMjQDB27gRSn5NEada_DTXDe/view
 
   ## Table of Contents
    * [Installation](#installation)
@@ -15,20 +16,20 @@
   ## Installation
   To install necessary dependencies run the following command:
 
-    g
+    npm install
 
   ## Usage
-  g
+  The code runs on the Inquirer npm module as well as the filesystem(fs) module built into Node. 
 
   ## License
   This project os licensed under the MIT license.
     
 
   ## Contributing
-  g
+  If you wish to contribute, please fork the repo and pull request.
 
   ## Tests
-    g
+    npm run test
 
   ## Questions
-  If you have any questions about the repo, contact me at [g](https://github.com/g) or by email: [g](mailto:g)
+  If you have any questions about the repo, contact me at [MatValdejao](https://github.com/MatValdejao) or by email: [matvaldejao123@gmail.com](mailto:matvaldejao123@gmail.com)

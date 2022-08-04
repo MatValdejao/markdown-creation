@@ -66,7 +66,7 @@ const promptUser = () => {
 			type: "confirm",
 			name: "confirmDemo",
 			message: "Would you like to add a demo video in your description?",
-			default: false
+			default: false,
 		},
 		{
 			type: "input",
@@ -74,17 +74,17 @@ const promptUser = () => {
 			message: "Link to demo video: ",
 			when: ({ confirmDemo }) => {
 				if (confirmDemo) {
-					return true
+					return true;
 				} else {
-					return false
+					return false;
 				}
-			}
+			},
 		},
 		{
 			type: "list",
 			name: "license",
 			message: questions[4],
-			choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
+			choices: ["MIT", "Apache_2.0", "GPLv3", "BSD_3", "None"],
 		},
 		{
 			type: "input",
@@ -120,7 +120,7 @@ const promptUser = () => {
 		{
 			type: "input",
 			name: "contribution",
-            message: questions[8],
+			message: questions[8],
 		},
 	]);
 }
