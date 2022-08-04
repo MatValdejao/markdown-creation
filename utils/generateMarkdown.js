@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
   if (license === "None") {
     return ""
   } else {
-    return `https://img.shields.io/badge/License-${license}-yellow.svg`
+    return `![License](https://img.shields.io/badge/License-${license}-yellow.svg)`;
   }
 }
 
@@ -39,7 +39,7 @@ function checkDemo(demo) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ![License](${renderLicenseBadge(data.license)})
+  ${renderLicenseBadge(data.license)}
   ## Description
   ${data.description}
 

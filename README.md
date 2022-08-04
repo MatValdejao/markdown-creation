@@ -1,5 +1,5 @@
 # Markdown Creation
-  ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+  ![License](https://img.shields.io/badge/License-GPLv3-yellow.svg)
   ## Description
   This project uses Node to prompt the user a series of questions regarding their current coding project. Using the user inputs, the code writes the user a README file based on these inputs, streamlining the coding process.
 
@@ -19,10 +19,10 @@
     npm install
 
   ## Usage
-  The code runs on the Inquirer npm module as well as the filesystem(fs) module built into Node. 
+  The code runs on the Inquirer npm module as well as the filesystem(fs) module built into Node.
 
   ## License
-  This project os licensed under the MIT license.
+  This project os licensed under the GPLv3 license.
     
 
   ## Contributing
